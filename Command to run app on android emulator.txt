@@ -1,2 +1,0 @@
-Command to run on android emulator
-npx expo start

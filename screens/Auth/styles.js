@@ -2,16 +2,18 @@ import { StyleSheet } from 'react-native';
 import Colors from '../../constants/Colors';
 import Device from '../../theme/Device';
 import { Platform } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 // ---------------------- AUTH SCREEN -----------------------
 
 export default StyleSheet.create({
   screen: {
-    backgroundColor: Colors.bg,
+    backgroundColor: Colors.white,
     justifyContent: 'space-between',
     flexDirection: 'column',
     height: '100%',
   },
+
 
   gradient: {
     flex: 1,
@@ -23,24 +25,41 @@ export default StyleSheet.create({
 
   auth_text_view: {
     marginTop: Platform.OS === 'ios' ? 80 : 40,
-    padding: 15,
-    minHeight: '30%',
+    padding: 0,
+    minHeight: '5%',
   },
 
   auth_text_container: {
     width: '100%',
     paddingVertical: 0, // fixes styling for Android and should be default for iOS
+    justifyContent:'center',
+    alignItems :'center',
   },
+  auth_text_containerab: {
+    backgroundColor:'#FFFF00',
+    width: '100%',
+    paddingVertical: 0, // fixes styling for Android and should be default for iOS
+    justifyContent:'center',
+    alignItems :'center',
+  },
+ 
 
   auth_text_big: {
-    color: Colors.white,
+    color: Colors.black,
     fontSize: 40,
     fontWeight: 'bold',
   },
 
   auth_text_small: {
-    color: Colors.white,
-    fontSize: 28,
+    color: Colors.green,
+    fontSize: 12,
+    
+  },
+  auth_text_smallab: {
+    
+    color: Colors.black,
+    fontSize:20,
+    
   },
 
   scrollview_style: {
@@ -62,14 +81,15 @@ export default StyleSheet.create({
     backgroundColor: Colors.white,
     alignItems: 'center',
     width: '100%',
-    padding: 20,
-    paddingVertical: Platform.OS === 'ios' ? '7%' : '5%',
+    padding: 10,
+    paddingVertical: Platform.OS === 'ios' ? '7%' : '0%',
   },
 
   auth_loader_container: {
-    marginVertical: 30,
+    backgroundColor:Colors.calypso,
+    marginVertical: 20,
     padding: 3,
-    height: 44,
+    height: 30,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

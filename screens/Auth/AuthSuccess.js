@@ -10,12 +10,13 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import Colors from '../../constants/Colors';
+import Colors from '../../constants/Colors'; 
 
 const AuthSucess = (props) => {
   const { registerMode } = props.route.params;
 
   return (
+    
     <View style={[styles.screen, Platform.OS === 'ios' ? {} : { flex: 1 }]}>
       <StatusBar style="light" />
       <View style={styles.container}>
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     padding: 20,
     marginVertical: 20,
-    width: 280,
+    width: 50,
     height: 300,
   },
   image: {

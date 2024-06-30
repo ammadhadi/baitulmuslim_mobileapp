@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useCallback, useContext } from 'react';
 import {
   View,
   Text,
+  Image,
   ScrollView,
   Alert,
   Platform,
@@ -173,20 +174,36 @@ const AuthStartScreen = (props) => {
   };
 
   return (
+
     <View style={[styles.screen, Platform.OS === 'ios' ? {} : { flex: 1 }]}>
       <StatusBar style="light" />
       <View style={styles.auth_text_view}>
         <View style={styles.auth_text_container}>
+          <View style={styles.imageContainer}>
+            <Image
+              source={require('../../assets/images/favicon3.png')}
+              style={styles.image}
+            />
+          </View>
           <Text style={styles.auth_text_big}>
-            {registerMode ? 'Lets create your account Dynamatics!' : 'Lets sign you in Dynamatics'}
+
+            {registerMode ? 'Register' : 'Log in'}
           </Text>
         </View>
         <View style={styles.auth_text_container}>
           <Text style={styles.auth_text_small}>
-            {registerMode ? 'Welcome ;)' : 'Welcome back'}
+            {registerMode ? 'Regiter using social media' : 'Log in using social media'}
           </Text>
         </View>
+        <ButtonAndroid
+          style={styles.auth_loader_container}
+
+          title={registerMode ? 'Regiter with Google' : 'sing in with Goolge'}
+          onPress={handleSwitch}
+        />
+
       </View>
+
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'position' : 'height'}
         keyboardVerticalOffset={
@@ -200,10 +217,28 @@ const AuthStartScreen = (props) => {
             Platform.OS == 'ios' ? false : true
           }
         >
+          <View style={styles.auth_text_container}>
+            <Text style={styles.auth_text_small}>
+              {registerMode ? '-------------------------------------------or sign in with email------------------------------------------' : '-------------------------------------------or log in with email------------------------------------------'}
+
+            </Text>
+          </View>
           <View style={styles.auth_input_container}>
+            {registerMode && (
+              <AuthInput
+                required
+                autoCapitalize="none"
+                id="number"
+                keyboardType="number"
+                errorText="Add a Telephone number"
+                placeholder="Enter your Telephone number"
+                placeholderTextColor="#D8D8D8"
+                autoCorrect={false}
+                onInputChange={inputChangeHandler}
+              />
+            )}
             <AuthInput
               id="email"
-              label="Email"
               textContentType="emailAddress"
               keyboardType="email-address"
               required
@@ -215,21 +250,36 @@ const AuthStartScreen = (props) => {
               autoCorrect={false}
               onInputChange={inputChangeHandler}
             />
+            {registerMode && (
+              <AuthInput
+                required
+                autoCapitalize="none"
+                id="username"
+                keyboardType="default"
+                errorText="Add username"
+                placeholder="Enter Username"
+                placeholderTextColor="#D8D8D8"
+                autoCorrect={false}
+                onInputChange={inputChangeHandler}
+              />
+            )}
             <AuthInput
               secureTextEntry
               textContentType={
                 Platform.OS === 'ios' ? 'oneTimeCode' : 'newPassword'
               }
               id="password"
-              label="Password"
               keyboardType="default"
               required
               autoCapitalize="none"
               errorText="Enter your password"
+              placeholder="Enter password"
+              placeholderTextColor="#D8D8D8"
               autoCorrect={false}
               onInputChange={inputChangeHandler}
               autoComplete={'off'}
             />
+
             {registerMode && (
               <AuthInput
                 secureTextEntry
@@ -239,21 +289,15 @@ const AuthStartScreen = (props) => {
                 required
                 autoCapitalize="none"
                 id="repeated_password"
-                label="Repeat your password"
                 keyboardType="default"
                 errorText="Enter your password"
+                placeholder="Repeat your password"
+                placeholderTextColor="#D8D8D8"
                 autoCorrect={false}
                 onInputChange={inputChangeHandler}
               />
             )}
-            {!registerMode && (
-              <ButtonAndroid
-                style={styles.auth_text_button}
-                color={Colors.bgCard}
-                title={'Did you forget your password?'}
-                onPress={() => props.navigation.navigate('Recovery')}
-              />
-            )}
+
             {registerLoading || loginLoading ? (
               <View style={styles.auth_loader_container}>
                 <ActivityIndicator size="large" />
@@ -263,17 +307,57 @@ const AuthStartScreen = (props) => {
                 text={registerMode ? 'Create account' : 'Login'}
                 onPress={registerMode ? handleRegister : handleLogin}
               />
+            )}{!registerMode && (
+              <View style={styles.auth_text_container}>
+                <Text style={styles.auth_text_smallab}>
+                  Forget username or password?
+                </Text>
+
+
+                <ButtonAndroid
+                  style={styles.auth_loader_container}
+                  title={'Click here'}
+                  onPress={() => props.navigation.navigate('Recovery')}
+                />
+
+              </View>
             )}
-            <ButtonAndroid
-              style={styles.auth_text_button}
-              color={Colors.bgCard}
-              title={
-                registerMode
-                  ? 'You already have an account?'
-                  : 'You dont have an account?'
-              }
-              onPress={handleSwitch}
-            />
+            
+              <View style={styles.auth_text_container}>
+                <Text style={styles.auth_text_smallab}>
+                
+              {registerMode ? 'Already have an account?' :"Don't have an account yet?"}
+
+            
+                </Text>
+              </View>
+              <AuthButton
+                text={registerMode ? 'login here' : 'Register login here'}
+                onPress={registerMode ?handleLogin: handleRegister  }
+              />
+            
+
+            
+            <View style={styles.auth_text_containerab}>
+              <Text style={styles.auth_text_smallab}>
+                Baitulmuslim.com is only for Malaysian citizens who are SINGLE,  WIDOWED AND WIDOWED only
+              </Text>
+            </View>
+            {!registerMode && (
+            <View style={styles.auth_text_container}>
+              <Text style={styles.auth_text_smallab}>
+                If there is a problem, Yes
+              </Text>
+            </View>
+            )}
+            {!registerMode && (
+
+              <ButtonAndroid
+                style={styles.auth_loader_container}
+                title={'WhatsApp Admin'}
+                onPress={() => props.navigation.navigate('Recovery')}
+              />
+            )}
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

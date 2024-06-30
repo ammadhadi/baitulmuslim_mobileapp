@@ -8,7 +8,7 @@ import {
   ActivityIndicator,
   StyleSheet,
   Dimensions,
-} from 'react-native';
+} from 'react-native'; 
 import { StatusBar } from 'expo-status-bar';
 
 import AuthButton from '../../components/UI/AuthButton';
