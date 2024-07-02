@@ -24,7 +24,7 @@ const AuthSucess = (props) => {
           {registerMode ? 'Register Success' : 'Login Success'}
         </Text>
         <View style={styles.container}>
-          <Text style={styles.text}>Lets start with your profile</Text>
+          <Text style={styles.text}>Lets start</Text>
         </View>
       </View>
       <View style={styles.imageContainer}>
@@ -33,7 +33,7 @@ const AuthSucess = (props) => {
           style={styles.image}
         />
       </View>
-      {/* <View style={styles.buttonContainer}>
+      {/*ammad <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.touchable}
           onPress={() => {

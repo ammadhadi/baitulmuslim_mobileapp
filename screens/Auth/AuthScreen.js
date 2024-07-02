@@ -70,14 +70,12 @@ const AuthStartScreen = (props) => {
   });
 
   const { formIsValid, inputValues } = formState;
-
   const userRegisterReducer = useSelector((state) => state.userRegister);
   const {
     loading: registerLoading,
     data: registerData,
     error: registerError,
   } = userRegisterReducer;
-
   const userLoginReducer = useSelector((state) => state.userLogin);
   const {
     loading: loginLoading,
@@ -186,7 +184,6 @@ const AuthStartScreen = (props) => {
             />
           </View>
           <Text style={styles.auth_text_big}>
-
             {registerMode ? 'Register' : 'Log in'}
           </Text>
         </View>
@@ -197,11 +194,9 @@ const AuthStartScreen = (props) => {
         </View>
         <ButtonAndroid
           style={styles.auth_loader_container}
-
           title={registerMode ? 'Regiter with Google' : 'sing in with Goolge'}
           onPress={handleSwitch}
         />
-
       </View>
 
       <KeyboardAvoidingView
@@ -220,7 +215,6 @@ const AuthStartScreen = (props) => {
           <View style={styles.auth_text_container}>
             <Text style={styles.auth_text_small}>
               {registerMode ? '-------------------------------------------or sign in with email------------------------------------------' : '-------------------------------------------or log in with email------------------------------------------'}
-
             </Text>
           </View>
           <View style={styles.auth_input_container}>
@@ -312,8 +306,6 @@ const AuthStartScreen = (props) => {
                 <Text style={styles.auth_text_smallab}>
                   Forget username or password?
                 </Text>
-
-
                 <ButtonAndroid
                   style={styles.auth_loader_container}
                   title={'Click here'}
@@ -325,18 +317,13 @@ const AuthStartScreen = (props) => {
             
               <View style={styles.auth_text_container}>
                 <Text style={styles.auth_text_smallab}>
-                
-              {registerMode ? 'Already have an account?' :"Don't have an account yet?"}
-
-            
+                  {registerMode ? 'Already have an account?' :"Don't have an account yet?"}
                 </Text>
               </View>
               <AuthButton
                 text={registerMode ? 'login here' : 'Register login here'}
                 onPress={registerMode ?handleLogin: handleRegister  }
               />
-            
-
             
             <View style={styles.auth_text_containerab}>
               <Text style={styles.auth_text_smallab}>
@@ -351,7 +338,6 @@ const AuthStartScreen = (props) => {
             </View>
             )}
             {!registerMode && (
-
               <ButtonAndroid
                 style={styles.auth_loader_container}
                 title={'WhatsApp Admin'}
