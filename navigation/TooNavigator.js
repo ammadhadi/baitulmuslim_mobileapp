@@ -664,7 +664,7 @@ export const AuthNavigator = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {/*ammad <Stack.Screen name="AuthStart" component={AuthStartScreen} /> */}
       <Stack.Screen name="AuthStart" component={AuthScreen} initialParams={{'registerMode': true}} />
-      {/*ammad <Stack.Screen name="Auth" component={AuthScreen} /> */}
+      <Stack.Screen name="Auth" component={AuthScreen} />
       <Stack.Screen name="Instagram" component={InstagramScreen} />
       <Stack.Screen name="Create" component={CreateProfileScreen} />
       <Stack.Screen name="AddPhoto" component={AddProfilePhotoScreen} />

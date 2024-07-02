@@ -320,9 +320,13 @@ const AuthStartScreen = (props) => {
                   {registerMode ? 'Already have an account?' :"Don't have an account yet?"}
                 </Text>
               </View>
+              {/*ammmad <AuthButton
+                text={registerMode ? 'login here' : 'Register login here'}
+                onPress={registerMode ? handleLogin: handleRegister }
+              /> */}
               <AuthButton
                 text={registerMode ? 'login here' : 'Register login here'}
-                onPress={registerMode ?handleLogin: handleRegister  }
+                onPress={() => props.navigation.navigate('Auth', { registerMode: !registerMode })}
               />
             
             <View style={styles.auth_text_containerab}>
