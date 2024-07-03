@@ -57,12 +57,16 @@ const AuthStartScreen = (props) => {
 
   const [formState, dispatchFormState] = useReducer(formReducer, {
     inputValues: {
+      number: '',
       email: '',
+      user_name: '',
       password: '',
       repeated_password: '',
     },
     inputValidities: {
+      number: true,
       email: false,
+      user_name: true,
       password: true,
       repeated_password: true,
     },
@@ -157,7 +161,9 @@ const AuthStartScreen = (props) => {
     if (formIsValid) {
       dispatch(
         register(
+          inputValues.number,
           inputValues.email,
+          inputValues.user_name,
           inputValues.password,
           inputValues.repeated_password
         )
@@ -248,7 +254,7 @@ const AuthStartScreen = (props) => {
               <AuthInput
                 required
                 autoCapitalize="none"
-                id="username"
+                id="user_name"
                 keyboardType="default"
                 errorText="Add username"
                 placeholder="Enter Username"

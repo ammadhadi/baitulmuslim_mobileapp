@@ -63,32 +63,27 @@ export const refreshToken = () => {
   };
 };
 
-export const register = (email, password, repeated_password) => {
+export const register = (number, email, user_name, password, repeated_password) => {
   return async (dispatch) => {
     try {
-      debugger;
+      
       dispatch({ type: a.USER_REGISTER_REQUEST });
 
       const config = {
         'Content-Type': 'application/json',
       };
 
-      
-
       const { data } = await axios({
         method: 'POST',
         url: `${BASE_URL}/user/register?_format=json`,
         headers: config,
         data: {
-          "name": {"value": "Ammad"},
+          "name": {"value": user_name},
           "mail": {"value": email},
           "pass": {"value": password},
-          "field_telefon_bimbit" : {"value": "923132537173"}
+          "field_telefon_bimbit" : {"value": number}
         },
       });
-
-      console.log("registers data");
-      console.log(data);
 
       await AsyncStorage.setItem(
         '@userData',

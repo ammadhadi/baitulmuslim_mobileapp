@@ -7,7 +7,7 @@ import { Alert } from 'react-native';
  */
 export const checkServerError = (errorFromServer) => {
   let message = { title: '', message: '' };
-  debugger
+  
   if (
     errorFromServer &&
     errorFromServer.response &&
