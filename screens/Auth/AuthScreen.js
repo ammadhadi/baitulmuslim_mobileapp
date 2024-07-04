@@ -8,6 +8,7 @@ import {
   Platform,
   ActivityIndicator,
   KeyboardAvoidingView,
+  Linking
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
@@ -174,6 +175,46 @@ const AuthStartScreen = (props) => {
   const handleLogin = () => {
     if (formIsValid) {
       dispatch(login(inputValues.email, inputValues.password));
+    }
+  };
+
+  handleSendWhatsApp = () => {
+    let msg = "type something";
+    let phoneWithCountryCode = "923132537173";
+  
+    let mobile =
+      Platform.OS == "ios" ? phoneWithCountryCode : "+" + phoneWithCountryCode;
+    if (mobile) {
+      if (msg) {
+        let url = "whatsapp://send?text=" + msg + "&phone=" + mobile;
+        Linking.openURL(url)
+          .then(data => {
+            Alert.alert(
+              'Whatsapp Opened!',
+              'Ready to send message on Whatsapp',
+              [{ text: 'OK' }]
+            );
+          })
+          .catch(() => {
+            Alert.alert(
+              'Whatsapp Install!',
+              'Make sure WhatsApp installed on your device',
+              [{ text: 'OK' }]
+            );
+          });
+      } else {
+        Alert.alert(
+          'No message is set!',
+          'Please insert message to send',
+          [{ text: 'OK' }]
+        );
+      }
+    } else {
+      Alert.alert(
+        'Mobile is not set!',
+        'Please insert mobile no',
+        [{ text: 'OK' }]
+      );
     }
   };
 
@@ -351,7 +392,7 @@ const AuthStartScreen = (props) => {
               <ButtonAndroid
                 style={styles.auth_loader_container}
                 title={'WhatsApp Admin'}
-                onPress={() => props.navigation.navigate('Recovery')}
+                onPress={handleSendWhatsApp}
               />
             )}
           </View>
