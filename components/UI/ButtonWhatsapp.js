@@ -8,37 +8,45 @@ import {
 import Colors from '../../constants/Colors';
 import Device from '../../theme/Device';
 
-const ButtonAndroid = ({ onPress, title, style }) => {
+const ButtonWhatsapp = ({ onPress, text, style }) => {
   const textStyle = style ? style : styles.textStyle;
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
-        <Text style={textStyle}>{title}</Text>
+      <Text style={styles.auth_button_text}>{text}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default ButtonAndroid;
+export default ButtonWhatsapp;
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginleft:0,
   },
   buttonContainer: {
     justifyContent: 'center',
-    margenright:10,
-    height: 0.06 * Device.height,
+    //height: 0.06 * Device.height,
     overflow: 'hidden',
     paddingHorizontal: 10,
+    backgroundcolor:'#E8E1D9',
     borderRadius: 10,
+    height:35,
   },
   textStyle: {
     textAlign: 'center',
-    color: Colors.white,
-    fontSize: 18,
+    color: '#64BC46',
+    fontSize: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  auth_button_text: {
+    color: '#64BC46',
+    fontSize: 15,
   },
 });

@@ -1,4 +1,6 @@
 import dotenv from 'dotenv';
+import { color } from 'react-native-reanimated';
+import Colors from './constants/Colors';
 dotenv.config();
 
 export default () => ({
@@ -10,12 +12,12 @@ export default () => ({
     privacy: 'public',
     version: '1.1.0',
     orientation: 'portrait',
-    icon: './assets/images/toogether-icon.png',
+    icon: './assets/images/favicon3.png',
     platforms: ['ios', 'android'],
     splash: {
-      image: './assets/images/logo-2.png',
+      image: './assets/images/favicon2.png',
       resizeMode: 'contain',
-      backgroundColor: '#1A1936',
+      backgroundColor:'#FFFFFF',
     },
     updates: {
       fallbackToCacheTimeout: 0,
@@ -26,15 +28,15 @@ export default () => ({
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: './assets/images/toogether-icon.png',
-        backgroundColor: '#FFFFFF',
+        foregroundImage: './assets/images/favicon3.png',
+        backgroundColor:'#FFFFFF',
       },
       permissions: ['ACCESS_FINE_LOCATION', 'CAMERA', 'WRITE_EXTERNAL_STORAGE'],
       package: 'toogether.app',
       versionCode: 202304260, // Using the date + T (try number) format YYYYMMDDT as version code.
     },
     web: {
-      favicon: './assets/images/toogether-icon.png',
+      favicon: './assets/images/favicon3.png',
     },
     extra: {
       MODE: process.env.MODE || null,

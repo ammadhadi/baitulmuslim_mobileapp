@@ -9,7 +9,7 @@ import {
 import Colors from '../../constants/Colors';
 import Device from '../../theme/Device';
 
-const AuthButton = (props) => {
+const ClickButton = (props) => {
   const { onPress, text } = props;
 
   return (
@@ -19,12 +19,12 @@ const AuthButton = (props) => {
   );
 };
 
-export default AuthButton;
+export default ClickButton;
 
 const styles = StyleSheet.create({
   auth_button_container: {
     //marginVertical: Platform.OS === 'ios' ? 30 : 0,
-    marginTop: Platform.OS === 'ios' ? 25 : 15,
+    marginTop: Platform.OS === 'ios' ? 10 : 3,
     paddingTop:0,
     padding:0,
     paddingLeft: 15,

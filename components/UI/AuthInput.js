@@ -119,34 +119,36 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    color: Colors.black,
-    fontSize: 20,
+    color: '#E8E1D9',
+    fontSize: 14,
     marginVertical: Platform.OS === 'ios' ? 10 : 0.001 * Device.height,
     alignSelf: 'flex-start',
   },
 
   inputContainer: {
-    padding: 5,
+    padding: 0,
     backgroundColor: Colors.white,
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#D8D8D8',
+    borderWidth: 3,
+    borderColor: '#64BC46',
     justifyContent: 'center',
-    width: '100%',
-    height: 45,
-    paddingHorizontal: 10,
+    width: 320,
+    height: 35,
+    paddingHorizontal:10,
   },
 
   input: {
     paddingHorizontal: 2,
     paddingVertical: 2,
     color: Colors.blackwqs,
-    fontSize: 16,
+    fontSize: 14,
     width: '100%',
   },
 
   errorContainer: {
-    marginVertical: 5,
+    marginVertical: 0,
+    paddingHorizontal:40,
+    justifyContent: 'center',
     alignSelf: 'flex-start',
   },
 

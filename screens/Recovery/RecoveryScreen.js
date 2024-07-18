@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Platform, Alert } from 'react-native';
+import { View, Text, Image, StyleSheet, Platform, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
 import AuthButton from '../../components/UI/AuthButton';
@@ -10,6 +10,7 @@ import ActivityModal from '../../components/UI/ActivityModal';
 import * as c from '../../constants/requestTypes/user';
 import { sendRecoveryCode } from '../../store/actions/user';
 import { check400Error, checkServerError } from '../../utils/errors';
+import { color } from 'react-native-reanimated';
 
 const RecoveryScreen = (props) => {
   const { data, error, loading } = useSelector(
@@ -69,17 +70,23 @@ const RecoveryScreen = (props) => {
     );
   }
 
+
   return (
+
     <View style={styles.screen}>
+
       <View style={styles.auth_text_container}>
-        <Text style={styles.auth_text_big}>Recovery code</Text>
-        <Text style={styles.auth_text_small}>
-          We will send you a recover code to your email so you can change your
-          password
-        </Text>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('../../assets/images/favicon3.png')}
+            style={styles.image}
+          />
+        </View>
+        <Text style={styles.auth_text_big}>BAITULMUSLIM</Text>
+
       </View>
       <View style={styles.auth_input_email}>
-        <Text style={styles.auth_text_small}>E-mail</Text>
+        <Text style={styles.auth_text_small}>New Password</Text>
         <AuthInput
           id="email"
           textContentType="emailAddress"
@@ -89,7 +96,7 @@ const RecoveryScreen = (props) => {
           autoComplete="email"
           autoCapitalize="none"
           errorText="Enter your email"
-          placeholder="my-email@gmail.com"
+          placeholder="Enter your email or user name"
           placeholderTextColor="#B0B3B8"
           autoCorrect={false}
           border-radius="10"
@@ -98,7 +105,7 @@ const RecoveryScreen = (props) => {
         />
       </View>
       <View style={styles.button_container}>
-        <AuthButton text="Send recovery code" onPress={handlePress} />
+        <AuthButton text="Send" onPress={handlePress} />
       </View>
     </View>
   );
@@ -109,25 +116,28 @@ export default RecoveryScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: Colors.bg,
+    backgroundColor: Colors.white,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'column',
     height: '100%',
   },
   auth_text_big: {
-    color: Colors.white,
+    color: '#111111',
     fontSize: 35,
     fontWeight: 'bold',
   },
 
   auth_text_small: {
-    color: Colors.white,
-    fontSize: 20,
+    color: '#111111',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 30,
   },
   auth_text_container: {
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
     border: 2,
     width: '95%',
     padding: 10,
@@ -152,10 +162,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor:color.white,
+    fontSize:30,
+    
     width: '90%',
-    padding: Platform.OS === 'ios' ? 20 : 0,
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : 20,
-    paddingVertical: Platform.OS === 'ios' ? '7%' : 0,
-    paddingBottom: Platform.OS === 'ios' ? '7%' : 0.09 * Device.height,
+    //padding: Platform.OS === 'ios' ? 20 : 0,
+   // paddingHorizontal: Platform.OS === 'ios' ? 0 : 20,
+   // paddingVertical: Platform.OS === 'ios' ? '7%' : 0,
+    paddingBottom: 40,
   },
 });
