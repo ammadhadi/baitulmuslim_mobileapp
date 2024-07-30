@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 8,
-    backgroundColor: Colors.bgCard,
+   backgroundColor: Colors.bgCard,
   },
 
   img: {
