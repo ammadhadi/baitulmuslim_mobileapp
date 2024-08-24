@@ -75,9 +75,13 @@ export const register = (number, email, user_name, password, repeated_password) 
 
       const { data } = await axios({
         method: 'POST',
-        url: `${BASE_URL}/user/register?_format=json`,
+        //url: `${BASE_URL}/user/register?_format=json`,
+        url: `${BASE_URL}/users/add`,
         headers: config,
         data: {
+          "firstName": 'Muhammad',
+          "lastName": 'Ovi',
+          "age": 250,
           "name": {"value": user_name},
           "mail": {"value": email},
           "pass": {"value": password},
@@ -120,11 +124,14 @@ export const login = (email, password) => {
 
       const { data } = await axios({
         method: 'POST',
-        url: `${BASE_URL}/user/login?_format=json`,
+        //url: `${BASE_URL}/user/login?_format=json`,
+        url: `${BASE_URL}/user/login`,
         headers: config,
         data: {
-          "name": email,
-          "pass": password,
+          // "name": email,
+          // "pass": password,
+          "username": email,
+          "password": password,
         },
       });
 

@@ -662,7 +662,6 @@ export const RecoveryNavigator = () => {
 export const AuthNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/*ammad <Stack.Screen name="AuthStart" component={AuthStartScreen} /> */}
       <Stack.Screen name="AuthStart" component={AuthScreen} initialParams={{'registerMode': true}} />
       <Stack.Screen name="Auth" component={AuthScreen} />
       <Stack.Screen name="Instagram" component={InstagramScreen} />

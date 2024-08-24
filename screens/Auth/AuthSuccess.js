@@ -33,16 +33,6 @@ const AuthSucess = (props) => {
           style={styles.image}
         />
       </View>
-      {/*ammad <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.touchable}
-          onPress={() => {
-            props.navigation.navigate('Instagram');
-          }}
-        >
-          <Text style={styles.button_text}>Continue</Text>
-        </TouchableOpacity>
-      </View> */}
     </View>
   );
 };
