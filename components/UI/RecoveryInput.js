@@ -26,7 +26,7 @@ const inputReducer = (state, action) => {
   }
 };
 
-const AuthInput = (props) => {
+const RecoveryInput = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
     value: props.initialValue ? props.initialValue : '',
     isValid: props.initialIsValid,
@@ -103,7 +103,7 @@ const AuthInput = (props) => {
   );
 };
 
-export default AuthInput;
+export default RecoveryInput;
 
 const styles = StyleSheet.create({
   formControl: {
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
 
   container: {
     width: '100%',
+    paddingTop:20,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -129,11 +130,11 @@ const styles = StyleSheet.create({
     padding: 0,
     backgroundColor: Colors.white,
     borderRadius: 10,
-    borderWidth: 3,
+    //borderWidth: 10,
     //borderColor: '#64BC46',
     justifyContent: 'center',
-    width: 320,
-    height: 35,
+    width: 350,
+    height: 40,
     paddingHorizontal:10,
   },
 

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Platform, Alert } from 'react-native';
+import { View, Text, Image, StyleSheet, Platform, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import AuthButton from '../../components/UI/AuthButton';
-import AuthInput from '../../components/UI/AuthInput';
+import SendButton from '../../components/UI/SendButton';
+import RecoveryInput from '../../components/UI/RecoveryInput';
 import Device from '../../theme/Device';
 import Colors from '../../constants/Colors';
 import ActivityModal from '../../components/UI/ActivityModal';
 import * as c from '../../constants/requestTypes/user';
 import { sendRecoveryCode } from '../../store/actions/user';
 import { check400Error, checkServerError } from '../../utils/errors';
+import { color } from 'react-native-reanimated';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const RecoveryScreen = (props) => {
   const { data, error, loading } = useSelector(
@@ -69,36 +71,52 @@ const RecoveryScreen = (props) => {
     );
   }
 
+
   return (
+
     <View style={styles.screen}>
+
       <View style={styles.auth_text_container}>
-        <Text style={styles.auth_text_big}>Recovery code</Text>
-        <Text style={styles.auth_text_small}>
-          We will send you a recover code to your email so you can change your
-          password
-        </Text>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('../../assets/images/favicon3.png')}
+            style={styles.image}
+          />
+        </View>
+        <View style={{ paddingTop: 20 }}>
+          <Text style={styles.auth_text_big}>BAITULMUSLIM</Text>
+        </View>
       </View>
-      <View style={styles.auth_input_email}>
-        <Text style={styles.auth_text_small}>E-mail</Text>
-        <AuthInput
-          id="email"
-          textContentType="emailAddress"
-          keyboardType="email-address"
-          required
-          email
-          autoComplete="email"
-          autoCapitalize="none"
-          errorText="Enter your email"
-          placeholder="my-email@gmail.com"
-          placeholderTextColor="#B0B3B8"
-          autoCorrect={false}
-          border-radius="10"
-          onInputChange={handlerEmail}
-          initialValue={email}
-        />
-      </View>
-      <View style={styles.button_container}>
-        <AuthButton text="Send recovery code" onPress={handlePress} />
+      <View style={styles.screenLeft}>
+       
+
+        <View style={styles.auth_input_email}>
+          <Text style={styles.auth_text_small}>New Password:</Text>
+          <RecoveryInput
+            id="email"
+            textContentType="emailAddress"
+            keyboardType="email-address"
+            required
+            email
+            autoComplete="email"
+            autoCapitalize="none"
+            errorText="Enter your email"
+            placeholder="Enter your email or user name"
+            placeholderTextColor="#B0B3B8"
+            autoCorrect={false}
+            border-radius="10"
+            onInputChange={handlerEmail}
+            initialValue={email}
+          />
+
+          <View style={styles.button_container}>
+            <SendButton text="Send" onPress={handlePress} />
+
+          </View>
+          <LinearGradient
+          colors={['#537B45', '#A5F58A']}
+          style={styles.gradinet} />
+        </View>
       </View>
     </View>
   );
@@ -109,35 +127,84 @@ export default RecoveryScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: Colors.bg,
+    backgroundColor: '#A4F489',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'column',
     height: '100%',
   },
+  linearCircle: {
+    // position: 'absolute',
+    width: '100%',
+    height: '100%',
+    opacity: 0.1,
+    borderRadius: 10,
+    transform: [{ scaleX: 10 }],
+  },
+  screenLeft: {
+    // flex: 1,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    //flexDirection: 'column',
+    height: '100%',
+  },
   auth_text_big: {
-    color: Colors.white,
+    color: '#111111',
     fontSize: 35,
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
   },
 
   auth_text_small: {
-    color: Colors.white,
-    fontSize: 20,
+    color: '#FFFFFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 30,
   },
   auth_text_container: {
     flexDirection: 'column',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
-    border: 2,
-    width: '95%',
-    padding: 10,
+    alignItems: 'center',
+    //border: 2,
+    width: '100%',
+    paddingBottom: 50,
+
+    paddingTop: 50,
+    borderBottomRightRadius: 80,
     // fixes styling for Android and should be default for iOS
   },
   auth_input_email: {
-    width: '90%',
+    //width: '90%',
+    marginBottom: 0,
+    //zIndex:1000,
+    //elevation: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'column',
-  },
+    backgroundColor: '#A5F58A',
+    paddingTop: 60,
+    paddingBottom: 150,
+    paddingHorizontal: 40,
+    borderTopLeftRadius: 80,
 
+  },
+  gradinet: {
+    //width: '90%',
+    hight:'50%',
+    marginBottom: 0,
+    //zIndex:1000,
+    //elevation: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    //backgroundColor: '#A5F58A',
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingHorizontal: 100,
+    borderTopLeftRadius: 80,
+  },
   input: {
     height: 40,
     width: '90%',
@@ -152,10 +219,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: color.white,
+    fontSize: 30,
+
     width: '90%',
-    padding: Platform.OS === 'ios' ? 20 : 0,
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : 20,
-    paddingVertical: Platform.OS === 'ios' ? '7%' : 0,
-    paddingBottom: Platform.OS === 'ios' ? '7%' : 0.09 * Device.height,
+    //padding: Platform.OS === 'ios' ? 20 : 0,
+    // paddingHorizontal: Platform.OS === 'ios' ? 0 : 20,
+    // paddingVertical: Platform.OS === 'ios' ? '7%' : 0,
+    paddingBottom: 40,
   },
 });

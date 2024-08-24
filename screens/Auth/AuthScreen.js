@@ -6,6 +6,7 @@ import {
   ScrollView,
   Alert,
   Platform,
+  Button,
   ActivityIndicator,
   KeyboardAvoidingView,
   Linking
@@ -14,7 +15,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 
 import ButtonAndroid from '../../components/UI/ButtonAndroid';
+import ButtonWhatsapp from '../../components/UI/ButtonWhatsapp';
 import AuthButton from '../../components/UI/AuthButton';
+import ClickButton from '../../components/UI/ClickButton';
+import RegButton from '../../components/UI/RegButton';
+import LoginButton from '../../components/UI/LoginButton';
 import AuthInput from '../../components/UI/AuthInput';
 import Colors from '../../constants/Colors';
 import Device from '../../theme/Device';
@@ -23,6 +28,8 @@ import { Context } from '../../context/ContextProvider';
 import { authenticate, login, register } from '../../store/actions/auth';
 import { check400Error, checkServerError } from '../../utils/errors';
 import styles from './styles';
+//import ToggleButtonRow from 'react-native-paper/lib/typescript/components/ToggleButton/ToggleButtonRow';
+//import { blue100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 const FORM_UPDATE = 'FORM_UPDATE';
 
@@ -220,7 +227,7 @@ const AuthStartScreen = (props) => {
 
   return (
 
-    <View style={[styles.screen, Platform.OS === 'ios' ? {} : { flex: 1 }]}>
+    <View style={[styles.screen, Platform.OS === 'ios' ? {} : { flex: 1}]}>
       <StatusBar style="light" />
       <View style={styles.auth_text_view}>
         <View style={styles.auth_text_container}>
@@ -230,20 +237,35 @@ const AuthStartScreen = (props) => {
               style={styles.image}
             />
           </View>
+          <View style={{paddingTop:20}}>
           <Text style={styles.auth_text_big}>
-            {registerMode ? 'Register' : 'Log in'}
+            
+              {registerMode ? 'Register' : 'Log in'}
+            
           </Text>
+          </View>
         </View>
         <View style={styles.auth_text_container}>
           <Text style={styles.auth_text_small}>
-            {registerMode ? 'Regiter using social media' : 'Log in using social media'}
+            {registerMode ? 'Register using social media:' : 'Log in using social media:'}
           </Text>
         </View>
-        <ButtonAndroid
-          style={styles.auth_loader_container}
-          title={registerMode ? 'Regiter with Google' : 'sing in with Goolge'}
-          onPress={handleSwitch}
-        />
+       <View style={{paddingTop:0,width: '100%',marginVertical:0,paddingVertical:0,justifyContent: 'center',alignItems: 'center',flexDirection:'row',height:50}}>
+          <View style={styles.auth_loader_container}>
+          
+            <Image
+              source={require('../../assets/images/google-logo.png')}
+              style={styles.image}
+            />
+
+            <ButtonAndroid
+              title={registerMode ? 'Register with Google' : 'Log in with Google'}
+              onPress={handleSwitch}
+            />
+            
+          </View>
+        </View>
+
       </View>
 
       <KeyboardAvoidingView
@@ -256,14 +278,20 @@ const AuthStartScreen = (props) => {
           style={styles.scrollview_style}
           contentContainerStyle={styles.scrollview_content_container}
           automaticallyAdjustKeyboardInsets={
-            Platform.OS == 'ios' ? false : true
+            Platform.OS === 'ios' ? false : true
           }
         >
-          <View style={styles.auth_text_container}>
-            <Text style={styles.auth_text_small}>
-              {registerMode ? '-------------------------------------------or sign in with email------------------------------------------' : '-------------------------------------------or log in with email------------------------------------------'}
-            </Text>
+          <View style={{flexDirection: 'row', alignItems: 'center',paddingTop:15 }}>
+            <View style={{ flex: 1, height: 1, backgroundColor: '#64BC46',left:10 }} />
+            <View style={{alignSelf:'center',paddingLeft:5,paddingRight:5}}>
+              <Text style={styles.auth_text_small}>
+                {registerMode ? '  or sign in with email  ' : '   or log in with email   '}
+
+              </Text>
+            </View>
+            <View style={{ flex: 1, height: 1, backgroundColor: '#64BC46',right:10 }} />
           </View>
+
           <View style={styles.auth_input_container}>
             {registerMode && (
               <AuthInput
@@ -282,6 +310,7 @@ const AuthStartScreen = (props) => {
               id="email"
               textContentType="emailAddress"
               keyboardType="email-address"
+
               required
               autoComplete="email"
               autoCapitalize="none"
@@ -349,52 +378,71 @@ const AuthStartScreen = (props) => {
                 onPress={registerMode ? handleRegister : handleLogin}
               />
             )}{!registerMode && (
-              <View style={styles.auth_text_container}>
-                <Text style={styles.auth_text_smallab}>
-                  Forget username or password?
-                </Text>
-                <ButtonAndroid
-                  style={styles.auth_loader_container}
-                  title={'Click here'}
-                  onPress={() => props.navigation.navigate('Recovery')}
-                />
-
-              </View>
+              
+                <View style={{ flexDirection: 'row', alignItems: 'center',paddingTop:10 }}>
+                  <Text style={styles.auth_text_smallab}>
+                    Forget username or password? 
+                  </Text>
+                  <ClickButton
+                    style={{paddingTop:50, marginTop: Platform.OS === 'ios' ? 20 : 3}}
+                    text={'Click here'}
+                    onPress={() => props.navigation.navigate('Recovery')}
+                  />
+                </View>
+              
             )}
+
             
-              <View style={styles.auth_text_container}>
+              <View style={{ flexDirection: 'row', alignItems: 'center',paddingTop:0 }}>
                 <Text style={styles.auth_text_smallab}>
-                  {registerMode ? 'Already have an account?' :"Don't have an account yet?"}
+                  {registerMode ? 'Already have an account?' : "Don't have an account yet?"}
                 </Text>
+                {registerMode && (
+                  <RegButton
+                    text={'Login Here'}
+                    onPress={handleLogin}
+                  />
+                )}
+                {!registerMode && (
+                  <LoginButton
+                    text={'Register Here'}
+                    onPress={handleRegister}
+                  />
+                )}
               </View>
-              {/*ammmad <AuthButton
-                text={registerMode ? 'login here' : 'Register login here'}
-                onPress={registerMode ? handleLogin: handleRegister }
-              /> */}
-              <AuthButton
-                text={registerMode ? 'login here' : 'Register login here'}
-                onPress={() => props.navigation.navigate('Auth', { registerMode: !registerMode })}
-              />
             
+            <View style={{paddingRight:10,paddingLeft:10,paddingTop:5,paddingBottom:10}}>
             <View style={styles.auth_text_containerab}>
               <Text style={styles.auth_text_smallab}>
+
                 Baitulmuslim.com is only for Malaysian citizens who are SINGLE,  WIDOWED AND WIDOWED only
               </Text>
             </View>
-            {!registerMode && (
-            <View style={styles.auth_text_container}>
-              <Text style={styles.auth_text_smallab}>
-                If there is a problem, Yes
-              </Text>
             </View>
-            )}
+
             {!registerMode && (
-              <ButtonAndroid
-                style={styles.auth_loader_container}
-                title={'WhatsApp Admin'}
-                onPress={handleSendWhatsApp}
-              />
+              
+                <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 70}}>
+
+                  <Text style={styles.auth_text_smallab}>
+                   If there is a problem, Yes 
+                  </Text>
+
+                  <View style={styles.whatsapp_loader_container}>
+                    <Image
+                      source={require('../../assets/images/whatsapp-logo.jpg')}
+                      style={styles.image}
+                    />
+                    <ButtonWhatsapp
+                      text={'Whatsapp Admin'}
+                      onPress={handleSwitch}
+                    />
+                  </View>
+                </View>
+              
+
             )}
+
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

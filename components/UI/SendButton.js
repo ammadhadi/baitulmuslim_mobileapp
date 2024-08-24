@@ -9,7 +9,7 @@ import {
 import Colors from '../../constants/Colors';
 import Device from '../../theme/Device';
 
-const AuthButton = (props) => {
+const SendButton = (props) => {
   const { onPress, text } = props;
 
   return (
@@ -19,27 +19,27 @@ const AuthButton = (props) => {
   );
 };
 
-export default AuthButton;
+export default SendButton;
 
 const styles = StyleSheet.create({
   auth_button_container: {
     //marginVertical: Platform.OS === 'ios' ? 30 : 0,
-    marginTop: Platform.OS === 'ios' ? 25 : 15,
+    marginTop: Platform.OS === 'ios' ? 25 : 80,
     paddingTop:0,
     padding:0,
-    paddingLeft: 15,
-    paddingRight: 15,
+    //paddingLeft: 20,
+    //paddingRight: 15,
     flexDirection: 'row',
-    //width: 100,
-    height:30,
+    width: 120,
+    height:35,
     //height: Platform.OS === 'ios' ? 44 : 0.06 * Device.height,
-    backgroundColor:'#337AB7',
+    backgroundColor:'#F1F1F1',
     borderRadius: 10,
     alignItems: 'center',
-    //justifyContent: 'center',
+    justifyContent: 'center',
   },
   auth_button_text: {
-    color: Colors.white,
-    fontSize: 20,
+    color: '#519259',
+    fontSize:25,
   },
 });

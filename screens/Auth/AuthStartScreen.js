@@ -131,8 +131,10 @@ const styles = StyleSheet.create({
 
   image: {
     width: '100%',
+    
     height: Platform.OS === 'ios' ? 450 : 0.6 * Device.height,
     resizeMode: 'cover', // default value
+    
   },
 
   buttonsContainer: {
@@ -148,7 +150,8 @@ const styles = StyleSheet.create({
 
   button: {
     fontSize: 60,
-    color: Colors.white,
+    //color:'#F7C112',
+    color:'#E8E1D9',
   },
 
   inputsContainer: {
