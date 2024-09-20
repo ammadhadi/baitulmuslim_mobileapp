@@ -4,9 +4,9 @@ dotenv.config();
 export default () => ({
   expo: {
     name: 'BaitulMuslim',
-    description: 'Making university life more fun',
+    description: 'Making life easy with BaitulMuslim',
     slug: 'baitulmuslim-app',
-    owner: 'damian_stone',
+    owner: 'ammad_hadi',
     privacy: 'public',
     version: '1.1.0',
     orientation: 'portrait',
