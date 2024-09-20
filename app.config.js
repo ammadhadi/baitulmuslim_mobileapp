@@ -3,14 +3,14 @@ dotenv.config();
 
 export default () => ({
   expo: {
-    name: 'Toogether',
+    name: 'BaitulMuslim',
     description: 'Making university life more fun',
-    slug: 'toogether-app',
+    slug: 'baitulmuslim-app',
     owner: 'damian_stone',
     privacy: 'public',
     version: '1.1.0',
     orientation: 'portrait',
-    icon: './assets/images/toogether-icon.png',
+    icon: './assets/images/baitulmuslim-icon.png',
     platforms: ['ios', 'android'],
     splash: {
       image: './assets/images/logo-2.png',
@@ -26,15 +26,15 @@ export default () => ({
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: './assets/images/toogether-icon.png',
+        foregroundImage: './assets/images/baitulmuslim-icon.png',
         backgroundColor: '#FFFFFF',
       },
       permissions: ['ACCESS_FINE_LOCATION', 'CAMERA', 'WRITE_EXTERNAL_STORAGE'],
-      package: 'toogether.app',
+      package: 'baitulmuslim.app',
       versionCode: 202304260, // Using the date + T (try number) format YYYYMMDDT as version code.
     },
     web: {
-      favicon: './assets/images/toogether-icon.png',
+      favicon: './assets/images/baitulmuslim-icon.png',
     },
     extra: {
       MODE: process.env.MODE || null,

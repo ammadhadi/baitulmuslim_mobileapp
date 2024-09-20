@@ -85,7 +85,7 @@ const SettingScreen = (props) => {
     try {
       const result = await Share.share({
         message:
-          'Toogether App 🎉 | Find parties around you and meet other students, download it here ;) https://toogether.app/',
+          'BaitulMuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com/',
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {

@@ -29,7 +29,7 @@ export const SETTINGS_ACCOUNT_DATA = [
     id: 'privacy-policy',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/privacy-policy',
+      url: 'https://baitulmuslim.com/privacy-policy',
     },
     icon: 'lock-closed-outline',
     ionicons: true,
@@ -51,7 +51,7 @@ export const SETTINGS_APP_DATA = [
     id: 'FAQ',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/',
+      url: 'https://baitulmuslim.com/',
     },
     icon: 'chat-question-outline',
     materialcommunityicons: true,
@@ -61,7 +61,7 @@ export const SETTINGS_APP_DATA = [
     id: 'terms-of-conditions',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/terms-and-conditions',
+      url: 'https://baitulmuslim.com/terms-and-conditions',
     },
     icon: 'warning',
     antdesign: true,
@@ -71,7 +71,7 @@ export const SETTINGS_APP_DATA = [
     id: 'community-guidelines',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/community-guidelines',
+      url: 'https://baitulmuslim.com/community-guidelines',
     },
     icon: 'team',
     antdesign: true,
@@ -81,7 +81,7 @@ export const SETTINGS_APP_DATA = [
     id: 'safety-tips',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/safety-tips',
+      url: 'https://baitulmuslim.com/safety-tips',
     },
     icon: 'Safety',
     antdesign: true,
@@ -91,7 +91,7 @@ export const SETTINGS_APP_DATA = [
     id: 'about-us',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/',
+      url: 'https://baitulmuslim.com/',
     },
     icon: 'alert-circle',
     feather: true,
@@ -101,7 +101,7 @@ export const SETTINGS_APP_DATA = [
     id: 'contact-us',
     action: {
       type: 'REDIRECT_TO_URL',
-      url: 'https://toogether.app/',
+      url: 'https://baitulmuslim.com/',
     },
     icon: 'grid',
     feather: true,

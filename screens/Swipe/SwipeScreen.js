@@ -97,7 +97,7 @@ const SwipeScreen = (props) => {
     try {
       const result = await Share.share({
         message:
-          'Toogether App 🎉 | Find parties around you and meet other students, download it here ;) https://toogether.app/',
+          'BaitulMuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com/',
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -130,7 +130,7 @@ const SwipeScreen = (props) => {
       <SwipeError
         imageUrl={require('../../assets/images/radar.png')}
         title="All cards swiped"
-        text="Complete the following 3 minute form and help us build Toogether ;)"
+        text="Complete the following 3 minute form and help us build BaitulMuslim ;)"
         onPress={handleFeedbackForm}
         buttonText="Feedback form"
         reload
@@ -144,7 +144,7 @@ const SwipeScreen = (props) => {
       <SwipeError
         imageUrl={require('../../assets/images/radar.png')}
         title="No Cards found"
-        text="There seems to be no one around you using Toogether. Why not tell them to download it? ;)"
+        text="There seems to be no one around you using BaitulMuslim. Why not tell them to download it? ;)"
         onPress={onShareApp}
         buttonText="Share this amazing app"
         reload
