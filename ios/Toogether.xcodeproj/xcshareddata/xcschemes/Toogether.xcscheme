@@ -15,9 +15,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+<<<<<<< HEAD
                BuildableName = "Baitulmuslim.app"
                BlueprintName = "Baitulmuslim"
                ReferencedContainer = "container:Baitulmuslim.xcodeproj">
+=======
+               BuildableName = "BaitulMuslim.app"
+               BlueprintName = "BaitulMuslim"
+               ReferencedContainer = "container:BaitulMuslim.xcodeproj">
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +39,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+<<<<<<< HEAD
                BuildableName = "BaitulmuslimTests.xctest"
                BlueprintName = "BaitulmuslimTests"
                ReferencedContainer = "container:Baitulmuslim.xcodeproj">
+=======
+               BuildableName = "BaitulMuslimTests.xctest"
+               BlueprintName = "BaitulMuslimTests"
+               ReferencedContainer = "container:BaitulMuslim.xcodeproj">
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +67,15 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+<<<<<<< HEAD
             BuildableName = "Baitulmuslim.app"
             BlueprintName = "Baitulmuslim"
             ReferencedContainer = "container:Baitulmuslim.xcodeproj">
+=======
+            BuildableName = "BaitulMuslim.app"
+            BlueprintName = "BaitulMuslim"
+            ReferencedContainer = "container:BaitulMuslim.xcodeproj">
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +90,15 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+<<<<<<< HEAD
             BuildableName = "Baitulmuslim.app"
             BlueprintName = "Baitulmuslim"
             ReferencedContainer = "container:Baitulmuslim.xcodeproj">
+=======
+            BuildableName = "BaitulMuslim.app"
+            BlueprintName = "BaitulMuslim"
+            ReferencedContainer = "container:BaitulMuslim.xcodeproj">
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

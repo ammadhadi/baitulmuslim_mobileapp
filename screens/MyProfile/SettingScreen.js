@@ -85,7 +85,11 @@ const SettingScreen = (props) => {
     try {
       const result = await Share.share({
         message:
+<<<<<<< HEAD
           'Baitulmuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com.my/',
+=======
+          'BaitulMuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com/',
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {

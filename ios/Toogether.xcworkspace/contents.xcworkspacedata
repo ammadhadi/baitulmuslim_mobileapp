@@ -2,7 +2,11 @@
 <Workspace
    version = "1.0">
    <FileRef
+<<<<<<< HEAD
       location = "group:Baitulmuslim.xcodeproj">
+=======
+      location = "group:BaitulMuslim.xcodeproj">
+>>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
