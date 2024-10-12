@@ -7,9 +7,17 @@ npx expo start
 
 
 Remaining work to do:
-    Replace word and content from together to Baitulmuslim
+    Replace word and content from toogether to Baitulmuslim
     
     Replace splash screen image, first time app run on android emulator or device. If it is not showing then empty device and app data
     
     Remove un-necessary files from this project to send code to client
+
+    Remove old readme file
+
+    check images of toogether or related in android and ios folder
+
+    try to build Apk
+
+    work on google signin
 

@@ -8,13 +8,13 @@ const ClipBoard = ({ groupCode, backgroundColor }) => {
     try {
       const result = await Share.share({
         message: `
-                  Join to my group on Toogether app 
+                  Join to my group on Baitulmuslim app 
                   \n COPY the following link: 
                   \n ${groupCode}
                   \n How to join a group using the link? 🤔
                   \n Open the app -> Group -> Join a group -> paste the link 
-                  \n Don't have Toogether yet? 👀
-                  \n Download it here ;) https://toogether.app/beta
+                  \n Don't have Baitulmuslim yet? 👀
+                  \n Download it here ;) https://baitulmuslim.com.my/
           `,
       });
       if (result.action === Share.sharedAction) {

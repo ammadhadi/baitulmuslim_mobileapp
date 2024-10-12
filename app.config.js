@@ -5,10 +5,10 @@ dotenv.config();
 
 export default () => ({
   expo: {
-    name: 'Toogether',
-    description: 'Making university life more fun',
-    slug: 'toogether-app',
-    owner: 'damian_stone',
+    name: 'BaitUlMuslim',
+    description: 'Making life connections easy',
+    slug: 'baitulmuslim-app',
+    owner: 'Ammad Hadi',
     privacy: 'public',
     version: '1.1.0',
     orientation: 'portrait',
@@ -32,7 +32,7 @@ export default () => ({
         backgroundColor:'#FFFFFF',
       },
       permissions: ['ACCESS_FINE_LOCATION', 'CAMERA', 'WRITE_EXTERNAL_STORAGE'],
-      package: 'toogether.app',
+      package: 'baitulmuslim.app',
       versionCode: 202304260, // Using the date + T (try number) format YYYYMMDDT as version code.
     },
     web: {

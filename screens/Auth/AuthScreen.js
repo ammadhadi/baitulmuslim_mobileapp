@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
-
 import ButtonAndroid from '../../components/UI/ButtonAndroid';
 import ButtonWhatsapp from '../../components/UI/ButtonWhatsapp';
 import AuthButton from '../../components/UI/AuthButton';
@@ -28,8 +27,6 @@ import { Context } from '../../context/ContextProvider';
 import { authenticate, login, register } from '../../store/actions/auth';
 import { check400Error, checkServerError } from '../../utils/errors';
 import styles from './styles';
-//import ToggleButtonRow from 'react-native-paper/lib/typescript/components/ToggleButton/ToggleButtonRow';
-//import { blue100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 const FORM_UPDATE = 'FORM_UPDATE';
 
@@ -310,7 +307,6 @@ const AuthStartScreen = (props) => {
               id="email"
               textContentType="emailAddress"
               keyboardType="email-address"
-
               required
               autoComplete="email"
               autoCapitalize="none"
@@ -375,7 +371,7 @@ const AuthStartScreen = (props) => {
             ) : (
               <AuthButton
                 text={registerMode ? 'Create account' : 'Login'}
-                onPress={registerMode ? handleRegister : handleLogin}
+                onPress={registerMode ? handleRegister : handleLogin }
               />
             )}{!registerMode && (
               
@@ -400,13 +396,13 @@ const AuthStartScreen = (props) => {
                 {registerMode && (
                   <RegButton
                     text={'Login Here'}
-                    onPress={handleLogin}
+                    onPress={handleSwitch}
                   />
                 )}
                 {!registerMode && (
                   <LoginButton
                     text={'Register Here'}
-                    onPress={handleRegister}
+                    onPress={handleSwitch}
                   />
                 )}
               </View>
@@ -435,7 +431,7 @@ const AuthStartScreen = (props) => {
                     />
                     <ButtonWhatsapp
                       text={'Whatsapp Admin'}
-                      onPress={handleSwitch}
+                      onPress={handleSendWhatsApp}
                     />
                   </View>
                 </View>
