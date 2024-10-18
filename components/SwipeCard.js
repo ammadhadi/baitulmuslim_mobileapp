@@ -105,11 +105,7 @@ const SwipeCard = ({
       <View style={isGroup ? styles.groupCard : styles.singleCard}>
         {isGroup && (
           <View style={styles.groupName}>
-<<<<<<< HEAD
-            <Text style={styles.text}>Baitulmuslimgroup</Text>
-=======
             <Text style={styles.text}>BaitulMuslim group</Text>
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
           </View>
         )}
         <Swiper

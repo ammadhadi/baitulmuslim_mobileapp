@@ -5,16 +5,6 @@ dotenv.config();
 
 export default () => ({
   expo: {
-<<<<<<< HEAD
-    name: 'BaitUlMuslim',
-    description: 'Making life connections easy',
-    slug: 'baitulmuslim-app',
-    owner: 'Ammad Hadi',
-    privacy: 'public',
-    version: '1.1.0',
-    orientation: 'portrait',
-    icon: './assets/images/favicon3.png',
-=======
     name: 'BaitulMuslim',
     description: 'Making life easy with BaitulMuslim',
     slug: 'baitulmuslim-app',
@@ -23,7 +13,6 @@ export default () => ({
     version: '1.1.0',
     orientation: 'portrait',
     icon: './assets/images/baitulmuslim-icon.png',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     platforms: ['ios', 'android'],
     splash: {
       image: './assets/images/favicon2.png',
@@ -39,24 +28,15 @@ export default () => ({
     },
     android: {
       adaptiveIcon: {
-<<<<<<< HEAD
-        foregroundImage: './assets/images/favicon3.png',
-        backgroundColor:'#FFFFFF',
-=======
         foregroundImage: './assets/images/baitulmuslim-icon.png',
         backgroundColor: '#FFFFFF',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
       },
       permissions: ['ACCESS_FINE_LOCATION', 'CAMERA', 'WRITE_EXTERNAL_STORAGE'],
       package: 'baitulmuslim.app',
       versionCode: 202304260, // Using the date + T (try number) format YYYYMMDDT as version code.
     },
     web: {
-<<<<<<< HEAD
-      favicon: './assets/images/favicon3.png',
-=======
       favicon: './assets/images/baitulmuslim-icon.png',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     extra: {
       MODE: process.env.MODE || null,

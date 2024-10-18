@@ -73,11 +73,7 @@ const DetailBottomSheet = (props) => {
         <View style={styles.nameTextContainer}>
           <Text style={styles.nameText}>{`${name}, ${age}`}</Text>
           {props.isGroup && (
-<<<<<<< HEAD
-            <Text style={styles.toogetherGroupText}>Baitulmuslim group</Text>
-=======
             <Text style={styles.toogetherGroupText}>BaitulMuslim group</Text>
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
           )}
         </View>
         <TouchableOpacity onPress={handleClose} style={styles.closeContainer}>

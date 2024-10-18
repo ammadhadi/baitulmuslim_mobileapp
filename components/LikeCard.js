@@ -19,11 +19,7 @@ const LikeCard = ({
     let n = name;
     let a = age;
     if (!name || name === null) {
-<<<<<<< HEAD
-      n = 'Baitulmuslim User';
-=======
       n = 'BaitulMuslim User';
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     }
     if (!age || age === null) {
       a = '';
@@ -40,11 +36,7 @@ const LikeCard = ({
         <TouchableOpacity onPress={onShowProfile} style={styles.touch}>
           {isGroup && (
             <View style={styles.groupName}>
-<<<<<<< HEAD
-              <Text style={styles.text}>Baitulmuslim Group</Text>
-=======
               <Text style={styles.text}>BaitulMuslim Group</Text>
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
             </View>
           )}
           <FastImageBackground

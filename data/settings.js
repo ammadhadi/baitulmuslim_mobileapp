@@ -29,11 +29,7 @@ export const SETTINGS_ACCOUNT_DATA = [
     id: 'privacy-policy',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/privacy-policy',
-=======
       url: 'https://baitulmuslim.com/privacy-policy',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'lock-closed-outline',
     ionicons: true,
@@ -55,11 +51,7 @@ export const SETTINGS_APP_DATA = [
     id: 'FAQ',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/',
-=======
       url: 'https://baitulmuslim.com/',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'chat-question-outline',
     materialcommunityicons: true,
@@ -69,11 +61,7 @@ export const SETTINGS_APP_DATA = [
     id: 'terms-of-conditions',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/terms-and-conditions',
-=======
       url: 'https://baitulmuslim.com/terms-and-conditions',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'warning',
     antdesign: true,
@@ -83,11 +71,7 @@ export const SETTINGS_APP_DATA = [
     id: 'community-guidelines',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/community-guidelines',
-=======
       url: 'https://baitulmuslim.com/community-guidelines',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'team',
     antdesign: true,
@@ -97,11 +81,7 @@ export const SETTINGS_APP_DATA = [
     id: 'safety-tips',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/safety-tips',
-=======
       url: 'https://baitulmuslim.com/safety-tips',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'Safety',
     antdesign: true,
@@ -111,11 +91,7 @@ export const SETTINGS_APP_DATA = [
     id: 'about-us',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/',
-=======
       url: 'https://baitulmuslim.com/',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'alert-circle',
     feather: true,
@@ -125,11 +101,7 @@ export const SETTINGS_APP_DATA = [
     id: 'contact-us',
     action: {
       type: 'REDIRECT_TO_URL',
-<<<<<<< HEAD
-      url: 'https://baitulmuslim.com.my/',
-=======
       url: 'https://baitulmuslim.com/',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
     },
     icon: 'grid',
     feather: true,

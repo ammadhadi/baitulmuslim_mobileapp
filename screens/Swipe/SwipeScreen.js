@@ -97,11 +97,7 @@ const SwipeScreen = (props) => {
     try {
       const result = await Share.share({
         message:
-<<<<<<< HEAD
-          'Baitulmuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com.my/',
-=======
           'BaitulMuslim App 🎉 | Find parties around you and meet other students, download it here ;) https://baitulmuslim.com/',
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -134,11 +130,7 @@ const SwipeScreen = (props) => {
       <SwipeError
         imageUrl={require('../../assets/images/radar.png')}
         title="All cards swiped"
-<<<<<<< HEAD
-        text="Complete the following 3 minute form ;)"
-=======
         text="Complete the following 3 minute form and help us build BaitulMuslim ;)"
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
         onPress={handleFeedbackForm}
         buttonText="Feedback form"
         reload
@@ -152,11 +144,7 @@ const SwipeScreen = (props) => {
       <SwipeError
         imageUrl={require('../../assets/images/radar.png')}
         title="No Cards found"
-<<<<<<< HEAD
-        text="There seems to be no one around you using Baitulmuslim. Why not tell them to download it? ;)"
-=======
         text="There seems to be no one around you using BaitulMuslim. Why not tell them to download it? ;)"
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
         onPress={onShareApp}
         buttonText="Share this amazing app"
         reload

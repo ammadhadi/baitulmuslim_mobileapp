@@ -9,11 +9,7 @@ platform :ios, podfile_properties['ios.deploymentTarget'] || '13.0'
 install! 'cocoapods',
   :deterministic_uuids => false
 
-<<<<<<< HEAD
-target 'Baitulmuslim' do
-=======
 target 'BaitulMuslim' do
->>>>>>> 707286ddc060d9f5b96f44a9fb82b8ac7b6a07cf
   use_expo_modules!
   config = use_native_modules!
 
