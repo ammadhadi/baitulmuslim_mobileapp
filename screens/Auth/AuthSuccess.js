@@ -16,7 +16,6 @@ const AuthSucess = (props) => {
   const { registerMode } = props.route.params;
 
   return (
-    
     <View style={[styles.screen, Platform.OS === 'ios' ? {} : { flex: 1 }]}>
       <StatusBar style="light" />
       <View style={styles.container}>

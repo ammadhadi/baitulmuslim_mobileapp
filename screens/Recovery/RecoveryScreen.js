@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import SendButton from '../../components/UI/SendButton';
 import RecoveryInput from '../../components/UI/RecoveryInput';
-import Device from '../../theme/Device';
-import Colors from '../../constants/Colors';
 import ActivityModal from '../../components/UI/ActivityModal';
 import * as c from '../../constants/requestTypes/user';
 import { sendRecoveryCode } from '../../store/actions/user';

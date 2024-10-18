@@ -4,9 +4,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { TooNavigator, AuthNavigator } from './TooNavigator';
-import { refreshToken } from '../store/actions/auth';
-import { authenticate, setDidTryLogin } from '../store/actions/auth';
-import { logout } from '../store/actions/user';
 import StartupScreen from '../screens/StartupScreen';
 
 const jwt_decode = require('jwt-decode');

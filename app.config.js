@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
-import { color } from 'react-native-reanimated';
-import Colors from './constants/Colors';
+
 dotenv.config();
 
 export default () => ({

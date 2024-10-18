@@ -7,7 +7,6 @@ import {
   Dimensions,
 } from 'react-native';
 import Colors from '../../constants/Colors';
-import Device from '../../theme/Device';
 
 const AuthButton = (props) => {
   const { onPress, text } = props;

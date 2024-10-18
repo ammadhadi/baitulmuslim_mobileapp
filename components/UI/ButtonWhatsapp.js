@@ -5,8 +5,6 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import Colors from '../../constants/Colors';
-import Device from '../../theme/Device';
 
 const ButtonWhatsapp = ({ onPress, text, style }) => {
   const textStyle = style ? style : styles.textStyle;

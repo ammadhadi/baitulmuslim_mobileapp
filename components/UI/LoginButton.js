@@ -6,8 +6,6 @@ import {
   Platform,
   Dimensions,
 } from 'react-native';
-import Colors from '../../constants/Colors';
-import Device from '../../theme/Device';
 
 const LoginButton = (props) => {
   const { onPress, text } = props;
