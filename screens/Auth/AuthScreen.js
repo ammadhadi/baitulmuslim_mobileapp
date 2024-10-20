@@ -237,14 +237,14 @@ const AuthStartScreen = (props) => {
           <View style={{paddingTop:20}}>
           <Text style={styles.auth_text_big}>
             
-              {registerMode ? 'Register' : 'Log in'}
+              {registerMode ? 'Daftar' : 'Log Masuk'}
             
           </Text>
           </View>
         </View>
         <View style={styles.auth_text_container}>
           <Text style={styles.auth_text_small}>
-            {registerMode ? 'Register using social media:' : 'Log in using social media:'}
+            {registerMode ? 'Daftar menggunakkan media sosial:' : 'Log Masuk menggunakkan media sosial:'}
           </Text>
         </View>
        <View style={{paddingTop:0,width: '100%',marginVertical:0,paddingVertical:0,justifyContent: 'center',alignItems: 'center',flexDirection:'row',height:50}}>
@@ -256,7 +256,7 @@ const AuthStartScreen = (props) => {
             />
 
             <ButtonAndroid
-              title={registerMode ? 'Register with Google' : 'Log in with Google'}
+              title={registerMode ? 'Daftar with Google' : 'Log Masuk Dengan Google'}
               onPress={handleSwitch}
             />
             
@@ -282,7 +282,7 @@ const AuthStartScreen = (props) => {
             <View style={{ flex: 1, height: 1, backgroundColor: '#64BC46',left:10 }} />
             <View style={{alignSelf:'center',paddingLeft:5,paddingRight:5}}>
               <Text style={styles.auth_text_small}>
-                {registerMode ? '  or sign in with email  ' : '   or log in with email   '}
+                {registerMode ? '  Atau daftar masuk dengan emel  ' : '   Atau log masuk dengan emel   '}
 
               </Text>
             </View>
@@ -296,8 +296,8 @@ const AuthStartScreen = (props) => {
                 autoCapitalize="none"
                 id="number"
                 keyboardType="number"
-                errorText="Add a Telephone number"
-                placeholder="Enter your Telephone number"
+                errorText="No Telefon(Contoh:0123456709)"
+                placeholder="No Telefon(Contoh:0123456709)"
                 placeholderTextColor="#D8D8D8"
                 autoCorrect={false}
                 onInputChange={inputChangeHandler}
@@ -310,8 +310,8 @@ const AuthStartScreen = (props) => {
               required
               autoComplete="email"
               autoCapitalize="none"
-              errorText="Enter your email"
-              placeholder="hello@gmail.com"
+              errorText="Alamat emel(E-mail)"
+              placeholder="Alamat emel(E-mail)"
               placeholderTextColor="#D8D8D8"
               autoCorrect={false}
               onInputChange={inputChangeHandler}
@@ -322,8 +322,8 @@ const AuthStartScreen = (props) => {
                 autoCapitalize="none"
                 id="user_name"
                 keyboardType="default"
-                errorText="Add username"
-                placeholder="Enter Username"
+                errorText="Nama Ringkas(Username)"
+                placeholder="Nama Ringkas(Username)"
                 placeholderTextColor="#D8D8D8"
                 autoCorrect={false}
                 onInputChange={inputChangeHandler}
@@ -338,8 +338,8 @@ const AuthStartScreen = (props) => {
               keyboardType="default"
               required
               autoCapitalize="none"
-              errorText="Enter your password"
-              placeholder="Enter password"
+              errorText="Kata laluan(Password)"
+              placeholder="Kata laluan(Password)"
               placeholderTextColor="#D8D8D8"
               autoCorrect={false}
               onInputChange={inputChangeHandler}
@@ -356,8 +356,8 @@ const AuthStartScreen = (props) => {
                 autoCapitalize="none"
                 id="repeated_password"
                 keyboardType="default"
-                errorText="Enter your password"
-                placeholder="Repeat your password"
+                errorText="Ulang kata laluan(Password)"
+                placeholder="Ulang kata laluan(Password)"
                 placeholderTextColor="#D8D8D8"
                 autoCorrect={false}
                 onInputChange={inputChangeHandler}
@@ -370,18 +370,18 @@ const AuthStartScreen = (props) => {
               </View>
             ) : (
               <AuthButton
-                text={registerMode ? 'Create account' : 'Login'}
+                text={registerMode ? 'Daftar' : 'Log Masuk'}
                 onPress={registerMode ? handleRegister : handleLogin }
               />
             )}{!registerMode && (
               
                 <View style={{ flexDirection: 'row', alignItems: 'center',paddingTop:10 }}>
                   <Text style={styles.auth_text_smallab}>
-                    Forget username or password? 
+                    Lupa username atau kata laluan? 
                   </Text>
                   <ClickButton
                     style={{paddingTop:50, marginTop: Platform.OS === 'ios' ? 20 : 3}}
-                    text={'Click here'}
+                    text={'Klik Di Sini'}
                     onPress={() => props.navigation.navigate('Recovery')}
                   />
                 </View>
@@ -391,17 +391,17 @@ const AuthStartScreen = (props) => {
             
               <View style={{ flexDirection: 'row', alignItems: 'center',paddingTop:0 }}>
                 <Text style={styles.auth_text_smallab}>
-                  {registerMode ? 'Already have an account?' : "Don't have an account yet?"}
+                  {registerMode ? 'Sudah ada akaun?' : "Belum ada akaun?"}
                 </Text>
                 {registerMode && (
                   <RegButton
-                    text={'Login Here'}
+                    text={'Daftar Masuk Di Sini'}
                     onPress={handleSwitch}
                   />
                 )}
                 {!registerMode && (
                   <LoginButton
-                    text={'Register Here'}
+                    text={'Log Masuk Di Sini'}
                     onPress={handleSwitch}
                   />
                 )}
@@ -410,8 +410,7 @@ const AuthStartScreen = (props) => {
             <View style={{paddingRight:10,paddingLeft:10,paddingTop:5,paddingBottom:10}}>
             <View style={styles.auth_text_containerab}>
               <Text style={styles.auth_text_smallab}>
-
-                Baitulmuslim.com is only for Malaysian citizens who are SINGLE,  WIDOWED AND WIDOWED only
+                Baitulmuslim.com hanya untuk warganegara Malaysia yang BUJANG, JANDA dan DUDA sahaja
               </Text>
             </View>
             </View>

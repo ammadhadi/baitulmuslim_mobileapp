@@ -89,7 +89,7 @@ const RecoveryScreen = (props) => {
        
 
         <View style={styles.auth_input_email}>
-          <Text style={styles.auth_text_small}>New Password:</Text>
+          <Text style={styles.auth_text_small}>Kata laluan baharu:</Text>
           <RecoveryInput
             id="email"
             textContentType="emailAddress"
@@ -98,8 +98,8 @@ const RecoveryScreen = (props) => {
             email
             autoComplete="email"
             autoCapitalize="none"
-            errorText="Enter your email"
-            placeholder="Enter your email or user name"
+            errorText="Masukkan email atau username"
+            placeholder="Masukkan email atau username"
             placeholderTextColor="#B0B3B8"
             autoCorrect={false}
             border-radius="10"
@@ -108,7 +108,7 @@ const RecoveryScreen = (props) => {
           />
 
           <View style={styles.button_container}>
-            <SendButton text="Send" onPress={handlePress} />
+            <SendButton text="Hantar" onPress={handlePress} />
 
           </View>
           <LinearGradient
